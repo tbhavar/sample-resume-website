@@ -42,6 +42,15 @@
       background: rgba(255, 255, 255, 0.85);
       transform: translateX(3px);
     }
+    /* Touch optimization */
+    @media (hover: none) {
+      .glass-card:hover {
+        transform: none;
+      }
+      .glass-item:hover {
+        transform: none;
+      }
+    }
     @media print {
       body {
         background: #ffffff !important;
@@ -60,72 +69,69 @@
     }
   </style>
 </head>
-<body class="bg-gradient-to-br from-slate-100 via-sky-50/50 to-indigo-100/40 min-h-screen py-8 px-4 sm:px-6 lg:px-8 text-neutral-800">
+<body class="bg-gradient-to-br from-slate-100 via-sky-50/50 to-indigo-100/40 min-h-screen py-4 sm:py-6 md:py-8 lg:py-10 px-3 sm:px-6 md:px-8 lg:px-12 text-neutral-800 transition-colors">
 
-  <div class="max-w-4xl mx-auto mb-4 flex justify-end no-print">
+  <div class="w-full max-w-4xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto mb-3 sm:mb-4 flex justify-end no-print">
     <button 
       onclick="window.print()" 
-      class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-[#0a192f] via-[#102a45] to-[#1e3a5f] hover:from-[#0d213d] hover:to-[#254b7c] rounded-lg shadow-md hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#102a45] transform hover:-translate-y-0.5 active:translate-y-0"
+      class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-[#0a192f] via-[#102a45] to-[#1e3a5f] hover:from-[#0d213d] hover:to-[#254b7c] rounded-lg shadow-md hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#102a45] transform active:scale-95 sm:hover:-translate-y-0.5"
       title="Print or Save as PDF"
     >
-      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
       </svg>
-      Print / Save as PDF
+      <span>Print / Save as PDF</span>
     </button>
   </div>
 
-  <main class="max-w-4xl mx-auto glass-surface rounded-2xl overflow-hidden flex flex-col md:flex-row">
+  <main class="w-full max-w-4xl md:max-w-5xl lg:max-w-6xl xl:max-w-7xl mx-auto glass-surface rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-xl">
     
     <!-- LEFT / MAIN CONTENT COLUMN -->
-    <section class="w-full md:w-[68%] flex flex-col">
+    <section class="w-full md:w-[62%] lg:w-[67%] xl:w-[70%] flex flex-col">
       <!-- Top Banner: Navy Blue Gradient Headline -->
-      <header class="relative bg-gradient-to-r from-[#071326] via-[#0d2342] to-[#1b3a63] text-white px-8 py-9 sm:py-10 overflow-hidden shadow-sm">
+      <header class="relative bg-gradient-to-r from-[#071326] via-[#0d2342] to-[#1b3a63] text-white px-5 sm:px-8 md:px-7 lg:px-10 py-7 sm:py-9 lg:py-10 xl:py-12 overflow-hidden shadow-sm">
         <div class="absolute inset-0 bg-white/[0.04] backdrop-blur-[1px] pointer-events-none"></div>
-        <div class="relative z-10 transition-transform duration-300 hover:translate-x-1">
-          <h1 class="text-3xl sm:text-4xl font-extrabold tracking-wider uppercase leading-none text-white drop-shadow-sm">
+        <div class="relative z-10 transition-transform duration-300 sm:hover:translate-x-1">
+          <h1 class="text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold tracking-wider uppercase leading-tight sm:leading-none text-white drop-shadow-sm">
             ISHIKA SHARMA
           </h1>
-          <p class="text-lg sm:text-xl font-normal text-sky-200 mt-2 tracking-wide font-medium">
+          <p class="text-base sm:text-lg md:text-lg lg:text-xl font-normal text-sky-200 mt-1.5 sm:mt-2 tracking-wide font-medium">
             MBA Finance
           </p>
         </div>
       </header>
 
       <!-- Main Column Content Container -->
-      <div class="p-6 sm:p-8 space-y-6 flex-1">
+      <div class="p-4 sm:p-6 md:p-6 lg:p-8 xl:p-9 space-y-4 sm:space-y-6 flex-1">
         <!-- Professional Summary Card -->
-        <section aria-label="Professional Summary" class="glass-card rounded-xl p-5">
-          <p class="text-[13.5px] leading-relaxed text-neutral-700 text-justify">
+        <section aria-label="Professional Summary" class="glass-card rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6">
+          <p class="text-xs sm:text-[13.5px] lg:text-sm leading-relaxed text-neutral-700 text-justify">
             An aspiring financial analyst with a keen interest in financial analysis and strategic planning. Proficient in financial modelling, forecasting, and variance analysis, possessing strong quantitative skills and attention to detail essential for accurate financial reporting. Armed with a solid foundation in finance principles and data analysis techniques, eager to contribute to organisation's success.
           </p>
         </section>
 
         <!-- Internships Section -->
-        <section aria-labelledby="heading-internships" class="glass-card rounded-xl p-5">
-          <h2 id="heading-internships" class="text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-2 border-b border-sky-100 flex items-center justify-between">
+        <section aria-labelledby="heading-internships" class="glass-card rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6">
+          <h2 id="heading-internships" class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-2 border-b border-sky-100 flex items-center justify-between">
             <span>INTERNSHIPS</span>
             <span class="w-8 h-0.5 bg-gradient-to-r from-[#0e274c] to-sky-400 rounded-full"></span>
           </h2>
 
           <div class="mt-4">
-            <div class="grid grid-cols-1 sm:grid-cols-12 gap-x-2 gap-y-1">
-              <div class="sm:col-span-3">
-                <span class="text-xs font-bold text-[#0e274c] block">
-                  May 2023 -
-                </span>
-                <span class="text-xs font-bold text-[#0e274c] block">
-                  Aug 2023
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-y-1.5 sm:gap-x-4 lg:gap-x-6">
+              <div class="sm:col-span-4 md:col-span-4 lg:col-span-3">
+                <span class="text-xs font-bold text-[#0e274c] inline-block sm:block bg-sky-50 sm:bg-transparent px-2 py-0.5 sm:px-0 sm:py-0 rounded">
+                  May 2023 - Aug 2023
                 </span>
               </div>
-              <div class="sm:col-span-9">
-                <h3 class="text-sm font-bold text-neutral-900 leading-tight">
+              <div class="sm:col-span-8 md:col-span-8 lg:col-span-9 mt-1 sm:mt-0">
+                <h3 class="text-sm lg:text-base font-bold text-neutral-900 leading-tight">
                   Intern Financial Analyst
                 </h3>
-                <p class="text-xs italic text-neutral-500 font-medium mt-0.5 mb-2.5">
+                <p class="text-xs lg:text-[13px] italic text-neutral-500 font-medium mt-0.5 mb-2 sm:mb-2.5">
                   Growwell, Chennai
                 </p>
-                <ul class="list-disc ml-4 space-y-2 text-[12.5px] leading-normal text-neutral-700">
+                <ul class="list-disc ml-4 space-y-1.5 sm:space-y-2 text-xs sm:text-[12.5px] lg:text-[13px] leading-relaxed sm:leading-normal text-neutral-700">
                   <li>
                     Assisted in analysing financial data, including income statements, balance sheets, and cash flow statements, to identify trends, variances, and opportunities for improvement.
                   </li>
@@ -145,32 +151,32 @@
         </section>
 
         <!-- Education Section -->
-        <section aria-labelledby="heading-education" class="glass-card rounded-xl p-5">
-          <h2 id="heading-education" class="text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-2 border-b border-sky-100 flex items-center justify-between">
+        <section aria-labelledby="heading-education" class="glass-card rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6">
+          <h2 id="heading-education" class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-2 border-b border-sky-100 flex items-center justify-between">
             <span>EDUCATION</span>
             <span class="w-8 h-0.5 bg-gradient-to-r from-[#0e274c] to-sky-400 rounded-full"></span>
           </h2>
 
-          <div class="mt-4 space-y-5">
+          <div class="mt-4 space-y-4 sm:space-y-5">
             <!-- MBA Entry -->
-            <div class="grid grid-cols-1 sm:grid-cols-12 gap-x-2 gap-y-1">
-              <div class="sm:col-span-3">
-                <span class="text-xs font-bold text-[#0e274c]">
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-y-1.5 sm:gap-x-4 lg:gap-x-6">
+              <div class="sm:col-span-4 md:col-span-4 lg:col-span-3">
+                <span class="text-xs font-bold text-[#0e274c] inline-block sm:block bg-sky-50 sm:bg-transparent px-2 py-0.5 sm:px-0 sm:py-0 rounded">
                   Pursuing
                 </span>
               </div>
-              <div class="sm:col-span-9 space-y-1.5">
-                <h3 class="text-sm font-bold text-neutral-900 leading-tight">
+              <div class="sm:col-span-8 md:col-span-8 lg:col-span-9 space-y-1 sm:space-y-1.5 mt-1 sm:mt-0">
+                <h3 class="text-sm lg:text-base font-bold text-neutral-900 leading-tight">
                   MBA in Finance
                 </h3>
-                <p class="text-xs italic text-neutral-500 font-medium">
+                <p class="text-xs lg:text-[13px] italic text-neutral-500 font-medium">
                   SRM University, Chennai
                 </p>
                 <div class="pt-1">
                   <span class="block text-xs font-bold text-neutral-900 uppercase tracking-wide">
                     DISSERTATION:
                   </span>
-                  <p class="text-[12px] leading-relaxed text-neutral-700 mt-1">
+                  <p class="text-xs sm:text-[12px] lg:text-[12.5px] leading-relaxed text-neutral-700 mt-1">
                     Evaluation of Corporate Governance Practices and Firm Performance: Examine the relationship between corporate governance mechanisms (e.g., board structure, executive compensation, shareholder activism) and firm financial performance, considering factors such as profitability, shareholder value, and risk.
                   </p>
                 </div>
@@ -178,17 +184,17 @@
             </div>
 
             <!-- BBA Entry -->
-            <div class="grid grid-cols-1 sm:grid-cols-12 gap-x-2 gap-y-1 pt-2 border-t border-slate-100">
-              <div class="sm:col-span-3">
-                <span class="text-xs font-bold text-[#0e274c]">
+            <div class="grid grid-cols-1 sm:grid-cols-12 gap-y-1.5 sm:gap-x-4 lg:gap-x-6 pt-3 border-t border-slate-100">
+              <div class="sm:col-span-4 md:col-span-4 lg:col-span-3">
+                <span class="text-xs font-bold text-[#0e274c] inline-block sm:block bg-sky-50 sm:bg-transparent px-2 py-0.5 sm:px-0 sm:py-0 rounded">
                   2022
                 </span>
               </div>
-              <div class="sm:col-span-9">
-                <h3 class="text-sm font-bold text-neutral-900 leading-tight">
+              <div class="sm:col-span-8 md:col-span-8 lg:col-span-9 mt-1 sm:mt-0">
+                <h3 class="text-sm lg:text-base font-bold text-neutral-900 leading-tight">
                   BBA in Finance
                 </h3>
-                <p class="text-xs italic text-neutral-500 font-medium mt-0.5">
+                <p class="text-xs lg:text-[13px] italic text-neutral-500 font-medium mt-0.5">
                   Hindustan Institute of Technology &amp; Science, Chennai
                 </p>
               </div>
@@ -197,13 +203,13 @@
         </section>
 
         <!-- Achievements Section -->
-        <section aria-labelledby="heading-achievements" class="glass-card rounded-xl p-5">
-          <h2 id="heading-achievements" class="text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-2 border-b border-sky-100 flex items-center justify-between">
+        <section aria-labelledby="heading-achievements" class="glass-card rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6">
+          <h2 id="heading-achievements" class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-2 border-b border-sky-100 flex items-center justify-between">
             <span>ACHIEVEMENTS</span>
             <span class="w-8 h-0.5 bg-gradient-to-r from-[#0e274c] to-sky-400 rounded-full"></span>
           </h2>
 
-          <ul class="list-disc ml-4 mt-3 space-y-1.5 text-[12.5px] leading-normal text-neutral-700">
+          <ul class="list-disc ml-4 mt-3 space-y-1.5 sm:space-y-2 text-xs sm:text-[12.5px] lg:text-[13px] leading-relaxed sm:leading-normal text-neutral-700">
             <li>Head of Finnovate Club 2022</li>
             <li>Won 1st Prize in All India National Quiz Competition (Finance).</li>
             <li>Organised 'AAVISHKARNAM' a financial conclave 2021.</li>
@@ -214,37 +220,37 @@
     </section>
 
     <!-- RIGHT SIDEBAR COLUMN -->
-    <aside class="w-full md:w-[32%] bg-slate-50/50 backdrop-blur-md border-t md:border-t-0 md:border-l border-white/60 p-5 sm:p-6 space-y-5">
+    <aside class="w-full md:w-[38%] lg:w-[33%] xl:w-[30%] bg-slate-50/50 backdrop-blur-md border-t md:border-t-0 md:border-l border-white/60 p-4 sm:p-6 md:p-5 lg:p-7 xl:p-8 space-y-4 sm:space-y-5 lg:space-y-6">
       
       <!-- Section 1: PERSONAL INFO -->
-      <section aria-labelledby="heading-personal-info" class="glass-card rounded-xl p-4">
-        <h2 id="heading-personal-info" class="text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-1.5 border-b border-sky-100">
+      <section aria-labelledby="heading-personal-info" class="glass-card rounded-lg sm:rounded-xl p-4 sm:p-5">
+        <h2 id="heading-personal-info" class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-1.5 border-b border-sky-100">
           PERSONAL INFO
         </h2>
 
-        <div class="mt-3.5 space-y-3 text-xs">
-          <div class="glass-item p-1.5 rounded-lg">
+        <div class="mt-3 sm:mt-3.5 space-y-2.5 sm:space-y-3 text-xs sm:text-[13px]">
+          <div class="glass-item p-2 rounded-lg">
             <span class="block font-bold text-neutral-900">Address</span>
             <span class="text-neutral-600 block mt-0.5">Chennai, India</span>
           </div>
 
-          <div class="glass-item p-1.5 rounded-lg">
+          <div class="glass-item p-2 rounded-lg">
             <span class="block font-bold text-neutral-900">Phone</span>
-            <a href="tel:+919953776253" class="text-neutral-600 hover:text-[#0e274c] block mt-0.5 transition-colors">
+            <a href="tel:+919953776253" class="text-neutral-600 hover:text-[#0e274c] block mt-0.5 transition-colors py-0.5">
               +91-9953776253
             </a>
           </div>
 
-          <div class="glass-item p-1.5 rounded-lg">
+          <div class="glass-item p-2 rounded-lg">
             <span class="block font-bold text-neutral-900">Email</span>
-            <a href="mailto:support@resumod.co" class="text-neutral-600 hover:text-[#0e274c] break-all block mt-0.5 transition-colors">
+            <a href="mailto:support@resumod.co" class="text-neutral-600 hover:text-[#0e274c] break-all block mt-0.5 transition-colors py-0.5">
               support@resumod.co
             </a>
           </div>
 
-          <div class="glass-item p-1.5 rounded-lg">
+          <div class="glass-item p-2 rounded-lg">
             <span class="block font-bold text-neutral-900">LinkedIn</span>
-            <a href="https://www.linkedin.com/in/ishika" target="_blank" rel="noopener noreferrer" class="text-[#1b3a63] hover:text-[#0a192f] underline break-all block mt-0.5 transition-colors">
+            <a href="https://www.linkedin.com/in/ishika" target="_blank" rel="noopener noreferrer" class="text-[#1b3a63] hover:text-[#0a192f] underline break-all block mt-0.5 transition-colors py-0.5">
               www.linkedin.com/in/ishika
             </a>
           </div>
@@ -252,162 +258,162 @@
       </section>
 
       <!-- Section 2: SKILLS -->
-      <section aria-labelledby="heading-skills" class="glass-card rounded-xl p-4">
-        <h2 id="heading-skills" class="text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-1.5 border-b border-sky-100">
+      <section aria-labelledby="heading-skills" class="glass-card rounded-lg sm:rounded-xl p-4 sm:p-5">
+        <h2 id="heading-skills" class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-1.5 border-b border-sky-100">
           SKILLS
         </h2>
 
-        <div class="mt-3.5 space-y-2.5 text-xs">
+        <div class="mt-3 sm:mt-3.5 space-y-2 sm:space-y-2.5 text-xs sm:text-[12.5px] lg:text-[13px]">
           <!-- Skill: Financial Analysis (5/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Financial Analysis</div>
-            <div class="flex justify-end gap-1.5" aria-label="5 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Financial Analysis</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="5 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
             </div>
           </div>
 
           <!-- Skill: Budgeting and Forecasting (4/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Budgeting and Forecasting</div>
-            <div class="flex justify-end gap-1.5" aria-label="4 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Budgeting and Forecasting</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="4 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-slate-300 inline-block"></span>
             </div>
           </div>
 
           <!-- Skill: Financial Reporting (4/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Financial Reporting</div>
-            <div class="flex justify-end gap-1.5" aria-label="4 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Financial Reporting</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="4 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-slate-300 inline-block"></span>
             </div>
           </div>
 
           <!-- Skill: Data Entry and Maintenance (5/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Data Entry and Maintenance</div>
-            <div class="flex justify-end gap-1.5" aria-label="5 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Data Entry and Maintenance</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="5 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
             </div>
           </div>
 
           <!-- Skill: Ad-Hoc Projects (4/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Ad-Hoc Projects</div>
-            <div class="flex justify-end gap-1.5" aria-label="4 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Ad-Hoc Projects</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="4 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-slate-300 inline-block"></span>
             </div>
           </div>
 
           <!-- Skill: Process Improvement (5/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Process Improvement</div>
-            <div class="flex justify-end gap-1.5" aria-label="5 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Process Improvement</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="5 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
             </div>
           </div>
 
           <!-- Skill: Analytical Skills (5/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Analytical Skills</div>
-            <div class="flex justify-end gap-1.5" aria-label="5 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Analytical Skills</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="5 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
             </div>
           </div>
 
           <!-- Skill: Strong Communication (4/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Strong Communication</div>
-            <div class="flex justify-end gap-1.5" aria-label="4 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Strong Communication</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="4 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-slate-300 inline-block"></span>
             </div>
           </div>
 
           <!-- Skill: Presentation Skills (5/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Presentation Skills</div>
-            <div class="flex justify-end gap-1.5" aria-label="5 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Presentation Skills</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="5 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Section 3: LANGUAGES -->
-      <section aria-labelledby="heading-languages" class="glass-card rounded-xl p-4">
-        <h2 id="heading-languages" class="text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-1.5 border-b border-sky-100">
+      <section aria-labelledby="heading-languages" class="glass-card rounded-lg sm:rounded-xl p-4 sm:p-5">
+        <h2 id="heading-languages" class="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#0e274c] pb-1.5 border-b border-sky-100">
           LANGUAGES
         </h2>
 
-        <div class="mt-3.5 space-y-2.5 text-xs">
+        <div class="mt-3 sm:mt-3.5 space-y-2 sm:space-y-2.5 text-xs sm:text-[12.5px] lg:text-[13px]">
           <!-- Language: Tamil (3/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Tamil</div>
-            <div class="flex justify-end gap-1.5" aria-label="3 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Tamil</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="3 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-slate-300 inline-block"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-slate-300 inline-block"></span>
             </div>
           </div>
 
           <!-- Language: English (4/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">English</div>
-            <div class="flex justify-end gap-1.5" aria-label="4 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-slate-300 inline-block"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">English</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="4 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-slate-300 inline-block"></span>
             </div>
           </div>
 
           <!-- Language: Hindi (5/5) -->
-          <div class="glass-item p-1.5 rounded-lg">
-            <div class="text-neutral-800 font-medium mb-1">Hindi</div>
-            <div class="flex justify-end gap-1.5" aria-label="5 out of 5 stars">
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
-              <span class="w-2.5 h-2.5 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+          <div class="glass-item p-2 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1.5">
+            <span class="text-neutral-800 font-medium">Hindi</span>
+            <div class="flex items-center gap-1.5 shrink-0" aria-label="5 out of 5 stars">
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
+              <span class="w-2.5 h-2.5 sm:w-2.5 sm:h-2.5 lg:w-3 lg:h-3 rounded-full bg-[#0a192f] inline-block shadow-sm"></span>
             </div>
           </div>
         </div>
